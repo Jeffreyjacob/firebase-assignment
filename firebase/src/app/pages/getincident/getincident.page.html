@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>All Incidents</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let incident of incident$ | async">
+    <ion-card-content>
+      <ion-item >
+        <ion-avatar slot="start">
+          <img src="/assets/icon/IMG_4293.PNG">
+        </ion-avatar>
+       <ion-label>
+
+        <h2>{{incident.name}}</h2>
+        <p>{{incident.TypeOfInicdent}}</p>
+        <p>{{incident.briefDescription}}</p>
+        <p>{{incident.locatonOfIncident}}</p>
+       </ion-label>
+      </ion-item>
+    </ion-card-content>
+    
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="createIncident()">
+     <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
